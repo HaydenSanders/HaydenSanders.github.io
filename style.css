@@ -1,12 +1,15 @@
 body {
     background: rgb(94, 143, 54);
-    color: rgb(65, 53, 37);
+    color: rgb(65, 53, 50);
     padding: 10px;
     font-family: arial;
+
 }
 #all-contents {
   max-width: 800px;
     margin: auto;
+    outline: auto #77e74b;
+    padding: 1px;
 }
 
 /* navigation menu */
@@ -14,14 +17,16 @@ nav {
     background: rgb(240, 83, 83);
    margin: 0 auto;
     display: flex;
-    padding: 10px;
+    padding: 1px;
 }
 h1 {
     display: flex;
     align-items: center;
     color: rgb(0, 0, 0);
     flex: 1;
-    margin: 0;
+    margin: 10;
+    font-family: 'Times New Roman', Times, serif;
+    
 }
 #nav-ul {
     list-style-image: none;
@@ -39,13 +44,15 @@ a {
 main {
     background: rgb(250, 227, 165);
     display: flex;
+    height: 850px;
 }
 .sidebar {
     margin-right: 25px;
-    padding: 10px;
+    padding: 20px;
 }
 .sidebar-img {
     width: 200px;
+    outline: #92003d auto;
 }
 .content {
     flex: 1;
@@ -54,9 +61,17 @@ main {
 
 /* portfolio styles */
 #interests {
-    border: 4px silver ridge;
+    border: 15px rgb(252, 216, 97) ridge;
     padding: 8px;
+    outline:auto #fcff51;
 }
 h2, h3 {
     margin: 0px;
+}
+#TBH {
+    font-size: 50px;
+    padding: 90px;
+    color: #830e0e;
+    flex: 1;
+    font-family: 'Times New Roman', Times, serif;
 }
