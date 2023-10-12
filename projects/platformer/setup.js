@@ -3,8 +3,8 @@ const walkAcceleration = 2.5; // how much is added to the speed each frame
 const gravity = 0.5; // how much is subtracted from speedY each frame
 const friction = 1.5; // how much the player is slowed each frame
 const maxSpeed = 8; // maximum horizontal speed, not vertical
-const playerJumpStrength = 12; // this is subtracted from the speedY each jump
-const projectileSpeed = 8; // the speed of projectiles
+const playerJumpStrength = 11; // this is subtracted from the speedY each jump
+const projectileSpeed = 9; // the speed of projectiles
 
 /////////////////////////////////////////////////
 //////////ONLY CHANGE ABOVE THIS POINT///////////
@@ -12,7 +12,7 @@ const projectileSpeed = 8; // the speed of projectiles
 
 // Base game variables
 const frameRate = 60;
-const playerScale = 0.8; //makes the player just a bit smaller. Doesn't affect the hitbox, just the image
+const playerScale = 0.45; //makes the player just a bit smaller. Doesn't affect the hitbox, just the image
 
 // Player variables
 const player = {
@@ -48,11 +48,11 @@ const animationTypes = {
   flyingJump: "flying-jump",
   frontDeath: "front-death",
   frontIdle: "front-idle",
-  jump: "jump",
+  jump: "front-idle",
   lazer: "lazer",
-  run: "run",
-  stop: "stop",
-  walk: "walk",
+  run: "front-idle",
+  stop: "front-idle",
+  walk: "front-idle",
 };
 let currentAnimationType = animationTypes.run;
 let frameIndex = 0;
@@ -76,8 +76,8 @@ const cannonHeight = 80;
 let projectiles = [];
 const defaultProjectileWidth = 24;
 const defaultProjectileHeight = defaultProjectileWidth;
-const collectableWidth = 40;
-const collectableHeight = 40;
+const collectableWidth = 50;
+const collectableHeight = 50;
 let collectables = [];
 
 // canvas and context variables; must be initialized later
@@ -91,10 +91,10 @@ let halleImage;
 let animationDetails = {};
 
 var collectableList = {
-  database: { image: "images/collectables/database.png" },
-  diamond: { image: "images/collectables/diamond-head.png" },
-  grace: { image: "images/collectables/grace-head.png" },
-  kennedi: { image: "images/collectables/kennedi-head.png" },
-  max: { image: "images/collectables/max-head.png" },
+  database: { image: "https://static.thenounproject.com/png/135447-200.png" },
+  diamond: { image: "https://static.wikia.nocookie.net/eldenring/images/3/3a/ER_Icon_Flask_crimson_tears_4.png" },
+  grace: { image: "https://upload.wikimedia.org/wikipedia/en/9/9a/Trollface_non-free.png" },
+  kennedi: { image: "https://static.wikia.nocookie.net/family-guy-the-quest-for-stuff/images/7/77/Joe.png" },
+  max: { image: "https://static.wikia.nocookie.net/ultrakill/images/3/37/MaliciousFace_12a.png" },
   steve: { image: "images/collectables/steve-head.png" },
 };

@@ -105,7 +105,7 @@ function changeAnimationType() {
         currentAnimationType = animationTypes.duck;
         if (duckTimer < DUCK_COUNTER_IDLE_VALUE) {
           // not using index 0 because the animation is too slow then
-          frameIndex = 3;
+          frameIndex = 10;
           duckTimer = DUCK_COUNTER_IDLE_VALUE * 2 - frameIndex;
         }
       } else if (
@@ -124,7 +124,7 @@ function debug() {
   ctx.fillText("xs" + player.speedX + " x: " + player.x, 500, 200);
   ctx.fillText("ys" + player.speedY + " y: " + player.y, 500, 250);
 
-  ctx.fillStyle = "black";
+  ctx.fillStyle = "img";
   ctx.fillText("on ground " + player.onGround, 150 + player.x, player.y - 20);
   ctx.fillText("hitx" + hitDx, 150 + player.x, player.y);
   ctx.fillText("hity" + hitDy, 150 + player.x, player.y + 20);
@@ -358,24 +358,24 @@ function projectileCollision() {
 }
 
 function deathOfPlayer() {
-  ctx.fillStyle = "grey";
+  ctx.fillStyle = "Black";
   ctx.fillRect(
     canvas.width / 4,
     canvas.height / 6,
     canvas.width / 2,
     canvas.height / 2
   );
-  ctx.fillStyle = "black";
+  ctx.fillStyle = "Red";
   ctx.font = "800% serif";
   ctx.fillText(
-    "You are dead",
+    "YOU DIED",
     canvas.width / 4,
     canvas.height / 6 + canvas.height / 5,
     (canvas.width / 16) * 14
   );
   ctx.font = "500% serif";
   ctx.fillText(
-    "Hit any key to restart",
+    "     Git Gud :)",
     canvas.width / 4,
     canvas.height / 6 + canvas.height / 3,
     (canvas.width / 16) * 14
@@ -411,7 +411,7 @@ function playerFrictionAndGravity() {
 
 function drawPlatforms() {
   for (var i = 0; i < platforms.length; i++) {
-    ctx.fillStyle = "grey";
+    ctx.fillStyle = "white";
     ctx.fillRect(
       platforms[i].x,
       platforms[i].y,
@@ -420,6 +420,7 @@ function drawPlatforms() {
     );
   }
 }
+
 
 function drawProjectiles() {
   for (var i = 0; i < projectiles.length; i++) {
