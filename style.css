@@ -9,7 +9,7 @@ body {
   max-width: 800px;
     margin: auto;
     outline: auto #77e74b;
-    padding: 1px;
+    padding: auto;
 }
 
 /* navigation menu */
@@ -44,7 +44,7 @@ a {
 main {
     background: rgb(250, 227, 165);
     display: flex;
-    height: 850px;
+    margin: auto;
 }
 .sidebar {
     margin-right: 25px;
@@ -86,19 +86,19 @@ h2, h3 {
         }
 
         #portfolio li {
-            background: #fff;
+            background: #000000;
             padding: 10px;
             border-radius: 10px;
             margin-bottom: 10px;
         }
 
         #portfolio li:hover {
-            background: #eee;
+            background: rgb(33, 82, 0);
         }
 
         #portfolio a {
             text-decoration: none;
-            color: #454545;
+            color: rgb(34, 197, 1);
         }
         #links li {
             color: blue;
@@ -151,4 +151,8 @@ h2, h3 {
                           align-content: center;
                           justify-content: center;
                         }
+                    }
+                    .Fade div:hover {
+                      transform
+                      transition-duration: 150ms;
                     }
