@@ -102,7 +102,7 @@ h2, h3 {
             text-decoration: none;
             color: rgb(34, 197, 1);
         }
-        #links li {
+        #links{
             color: blue;
         }
                     /* responsive web design */
@@ -157,3 +157,6 @@ h2, h3 {
                     .Fade div:hover {
                       transition-duration: 150ms;
                     }
+                   #link {
+                    color:blue;
+                   }
