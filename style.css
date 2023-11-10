@@ -51,6 +51,9 @@ main {
     margin-right: 25px;
     padding: 20px;
 }
+#soul{
+  margin-bottom: 25px;
+}
 .sidebar-img {
     width: 200px;
     outline: #92003d auto;
