@@ -8,7 +8,7 @@
 		.box {
 			width: 70px;
 			height: 70px;
-			background-color: rgb(119, 221, 124);
+			background-color: rgb(58, 179, 64);
 			font-size: 300%;
 			text-align: center;
 			user-select: none;
@@ -20,7 +20,7 @@
 		}
 		.board{
 			height: 100vh;
-			background-image: tan;
+			background-color: tan;
 		}
 	</style>
 	<!-- 	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script> -->
@@ -44,7 +44,7 @@
 			var boardWidth = board.width();	// the maximum X-Coordinate of the screen
 			var positionX = 0	//PositionX 
 			var points = 0
-			var speed = 10
+			var speed = 1
 			var positionY = positionX
 			var speedY=speed;
 			var boardHeight = jQuery(window).height(); 
@@ -52,7 +52,7 @@
 			var randomNumberBetween0and255 = Math.random() * 255;
 
 			// Every 50 milliseconds, call the update Function (see below)
-			setInterval(update, 50);
+			setInterval(update, 0.01);
 			
 			// Every time the box is clicked, call the handleBoxClick Function (see below)
 			box.on('click', handleBoxClick);
@@ -113,16 +113,16 @@
 				positionX=randNum
 
 				if(speed > 0){
-					speed =speed +3
+					speed =speed +0.25
 				}
 				if(speed < 0){
-					speed = speed -3
+					speed = speed -0.25
 				}
 				if(speedY > 0){
-					speedY =speedY +3
+					speedY =speedY +0.25
 				}
 				if(speedY < 0){
-					speedY = speedY -3
+					speedY = speedY -0.25
 				}
 
 
