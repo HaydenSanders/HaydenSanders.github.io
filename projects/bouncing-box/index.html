@@ -8,17 +8,19 @@
 		.box {
 			width: 70px;
 			height: 70px;
-			background-color: teal;
+			background-color: rgb(58, 179, 64);
 			font-size: 300%;
 			text-align: center;
 			user-select: none;
 			display: block;
 			position: absolute;
 			top: 100px;
-			left: 0px;  /* <--- Change me! */
+			left: 900px;  /* <--- Change me! */
+			background-image: green;
 		}
 		.board{
 			height: 100vh;
+			background-color: tan;
 		}
 	</style>
 	<!-- 	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script> -->
@@ -40,17 +42,26 @@
 			var box = jQuery('.box');	// reference to the HTML .box element
 			var board = jQuery('.board');	// reference to the HTML .board element
 			var boardWidth = board.width();	// the maximum X-Coordinate of the screen
+			var positionX = 0	//PositionX 
+			var points = 0
+			var speed = 1
+			var positionY = positionX
+			var speedY=speed;
+			var boardHeight = jQuery(window).height(); 
+			var randNum = Math.random() * boardWidth;
+			var randomNumberBetween0and255 = Math.random() * 255;
 
 			// Every 50 milliseconds, call the update Function (see below)
-			setInterval(update, 50);
+			setInterval(update, 0.01);
 			
 			// Every time the box is clicked, call the handleBoxClick Function (see below)
 			box.on('click', handleBoxClick);
 
 			// moves the Box to a new position on the screen along the X-Axis
-			function moveBoxTo(newPositionX) {
-				box.css("left", newPositionX);
-			}
+			function moveBoxTo(newPositionX, newPositionY) {
+      		box.css('left', newPositionX);
+     		box.css('top', newPositionY);
+  			}
 
 			// changes the text displayed on the Box
 			function changeBoxText(newText) {
@@ -70,8 +81,24 @@
 			it should move the Box to a new location. If the box drifts off the screen
 			turn it around! 
 			*/
-			function update() {
-				
+			function update() {						//We want to increase PositionX by 10
+				positionX=positionX+speed
+				positionY=positionY+speedY
+				randomNumberBetween0and255
+				moveBoxTo(positionX, positionY);
+				if(positionX > boardWidth){
+					speed =-speed
+				}
+				if(positionX < 0){
+					speed = -speed
+				}
+				if(positionY > boardHeight){
+					speedY =-speedY
+				}
+				if(positionY < 0){
+					speedY = -speedY
+				}
+
 
 			};
 
@@ -81,7 +108,23 @@
 			the left side of the screen.
 			*/
 			function handleBoxClick() {
-				
+				points = points + 1
+				changeBoxText(points);
+				positionX=randNum
+
+				if(speed > 0){
+					speed =speed +0.25
+				}
+				if(speed < 0){
+					speed = speed -0.25
+				}
+				if(speedY > 0){
+					speedY =speedY +0.25
+				}
+				if(speedY < 0){
+					speedY = speedY -0.25
+				}
+
 
 
 			};
