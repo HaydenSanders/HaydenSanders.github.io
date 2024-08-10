@@ -31,7 +31,7 @@ var background = function (window) {
         // TODO (several):
       var tree;
       var buildings = [];
-      
+  
         // called at the start of game and whenever the page is resized
         // add objects for display in background. draws each image added to the background once
         function render() {
@@ -62,7 +62,7 @@ var background = function (window) {
                 var buildingHeight = Math.random() * 500;
                 var building = draw.rect(75, buildingHeight, "darkBlue", "white", 1);
                 building.x = 200 * i;
-                building.y = groundY - buildingHeight + 100;
+                building.y = groundY - buildingHeight + 10;
                 background.addChild(building);
                 buildings.push(building);
               }
@@ -96,10 +96,14 @@ var background = function (window) {
             // TODO 4: Part 2 - Parallax
 
             for (var i = 0; i < buildings.length; i++) {
-                building.x = building.x + i;
-              
-                
+                var building = buildings[i];
+                building.x = building.x - 1;
+                if (building.x < -200){
+                    building.x = canvasWidth
+                }
+                // code to do something with each element
               }
+              
 
         } // end of update function - DO NOT DELETE
         
